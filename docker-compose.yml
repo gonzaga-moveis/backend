@@ -1,0 +1,20 @@
+# Services
+services:
+
+  # MySQL Service
+  mysql:
+    image: mysql:8.0.28
+    cap_add:
+      - SYS_NICE
+    container_name: gm_mysql
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - 3306:3306
+    volumes:
+      - ./data/mysql:/var/lib/mysql:rw
+    healthcheck:
+      test: mysqladmin ping -h 127.0.0.1 -u root --password=$$MYSQL_ROOT_PASSWORD
+      interval: 5s
+      retries: 10

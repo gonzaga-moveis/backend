@@ -10,7 +10,7 @@ module.exports = ({ env }) => ({
       ssl: env.bool('DATABASE_SSL', false),
     },
     pool: {
-      max: 5
+      max: 3
     }
   },
 });

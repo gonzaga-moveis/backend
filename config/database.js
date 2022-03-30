@@ -2,11 +2,11 @@ module.exports = ({ env }) => ({
   connection: {
     client: 'mysql',
     connection: {
-      host: env('DATABASE_HOST', 'bhtvq6pocdo3qeoqgbwv-mysql.services.clever-cloud.com'),
-      port: env.int('DATABASE_PORT', 3306),
-      database: env('DATABASE_NAME', 'bhtvq6pocdo3qeoqgbwv'),
-      user: env('DATABASE_USERNAME', 'uwplrci3prwdvllg'),
-      password: env('DATABASE_PASSWORD', 'kR0xUDR8GhGrz2UhPOZz'),
+      host: env('MYSQL_ADDON_HOST', 'localhost'),
+      port: env.int('MYSQL_ADDON_PORT', 3306),
+      database: env('MYSQL_ADDON_DB', 'backend'),
+      user: env('MYSQL_ADDON_USER', 'root'),
+      password: env('MYSQL_ADDON_PASSWORD', 'password'),
       ssl: env.bool('DATABASE_SSL', false),
     },
     pool: {
